@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# AFTER your GitHub username is chosen, replace 0xgf-18 below
+# (same replacement as in sitemap.xml and index.html)
+Sitemap: https://0xgf-18.github.io/preston-past-papers/sitemap.xml
