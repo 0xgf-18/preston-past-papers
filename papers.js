@@ -36,12 +36,12 @@
    ============================================================ */
 
 window.FOLDERS = [
-  { name: "BBA (IT) Eve",   url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
-  { name: "BBA (IT)",       url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
-  { name: "BBA (E)",        url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
-  { name: "BBA",            url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
-  { name: "BSCS",           url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
-  { name: "BSCS (E)",       url: "PASTE-DRIVE-FOLDER-LINK-HERE" },
+  { name: "BBA (IT) Eve",   url: "https://drive.google.com/drive/folders/1B3YYbk_-oHSKpo4ld_yKcZ8wSk4ZvgLt" },
+  { name: "BBA (IT)",       url: "https://drive.google.com/drive/folders/1m7uXBxGdq3jZyFt_dZhhCY3vqDuGIOBg" },
+  { name: "BBA (E)",        url: "https://drive.google.com/drive/folders/1CxDhR98LooMeu4yTZbignFlm6mQrqxqv" },
+  { name: "BBA",            url: "https://drive.google.com/drive/folders/1Ru-PtX-nmT-6DYw41C6uPQKJa3ROR9_F" },
+  { name: "BSCS",           url: "https://drive.google.com/drive/folders/1LgWKpXQMlCbDu6ndJR8MLtjjykb-x8-O" },
+  { name: "BSCS (E)",       url: "https://drive.google.com/drive/folders/1U6ycI3yzrd71smep1PSHZu7i7syn_OjI" },
 ];
 
 /* ------------------------------------------------------------
