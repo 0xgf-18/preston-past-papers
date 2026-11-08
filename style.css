@@ -104,6 +104,47 @@ h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; }
 .stat strong { color: var(--txt); }
 .stat.free { color: #5fd39a; border-color: rgba(95, 211, 154, .35); background: rgba(95, 211, 154, .08); }
 
+/* ---------- Light sweep + red particles ---------- */
+.flash {
+  position: fixed; top: 61px; left: 0; z-index: 45;
+  width: 45vw; height: 2px; margin-left: -45vw;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.85) 40%, var(--gold) 62%, rgba(246,180,14,0));
+  box-shadow: 0 0 14px rgba(246, 180, 14, .7), 0 0 44px rgba(246, 180, 14, .3);
+  pointer-events: none;
+  animation: sweep-x 5.5s linear infinite;
+}
+@keyframes sweep-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(200vw); }
+}
+
+.particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.particles i {
+  position: absolute; bottom: -10px; width: 5px; height: 5px; border-radius: 50%;
+  background: #ff3d55;
+  box-shadow: 0 0 9px 3px rgba(255, 61, 85, .65);
+  opacity: 0;
+  animation: rise 12s linear infinite;
+}
+@keyframes rise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  12%  { opacity: .85; }
+  70%  { opacity: .55; }
+  100% { transform: translate3d(var(--dx, 40px), -340px, 0); opacity: 0; }
+}
+.particles i:nth-child(1)  { left: 4%;  animation-delay: -1s;   --dx: 46px;  width: 4px; height: 4px; }
+.particles i:nth-child(2)  { left: 12%; animation-delay: -5s;   --dx: -30px; width: 5px; height: 5px; }
+.particles i:nth-child(3)  { left: 20%; animation-delay: -9s;   --dx: 60px;  width: 3px; height: 3px; }
+.particles i:nth-child(4)  { left: 28%; animation-delay: -3s;   --dx: -44px; width: 6px; height: 6px; }
+.particles i:nth-child(5)  { left: 37%; animation-delay: -7s;   --dx: 26px;  width: 4px; height: 4px; }
+.particles i:nth-child(6)  { left: 45%; animation-delay: -11s;  --dx: -52px; width: 5px; height: 5px; }
+.particles i:nth-child(7)  { left: 53%; animation-delay: -2s;   --dx: 34px;  width: 3px; height: 3px; }
+.particles i:nth-child(8)  { left: 61%; animation-delay: -8s;   --dx: -24px; width: 6px; height: 6px; }
+.particles i:nth-child(9)  { left: 70%; animation-delay: -4s;   --dx: 48px;  width: 4px; height: 4px; }
+.particles i:nth-child(10) { left: 78%; animation-delay: -10s;  --dx: -38px; width: 3px; height: 3px; }
+.particles i:nth-child(11) { left: 86%; animation-delay: -6s;   --dx: 30px;  width: 5px; height: 5px; }
+.particles i:nth-child(12) { left: 94%; animation-delay: -12s;  --dx: -46px; width: 4px; height: 4px; }
+
 /* ---------- Program folder tiles ---------- */
 .pick-head { margin: 16px 0 4px; }
 .pick-head h2 { margin: 0 0 4px; font-size: 1.25rem; letter-spacing: -.2px; }
@@ -182,9 +223,17 @@ h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; }
 .dev-card {
   position: relative;
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-  background: linear-gradient(180deg, var(--card), rgba(13, 21, 38, .55));
-  border: 1px solid var(--line); border-radius: var(--r-lg);
+  border: 1px solid transparent; border-radius: var(--r-lg);
+  background:
+    linear-gradient(180deg, rgba(16, 26, 48, .92), rgba(13, 21, 38, .55)) padding-box,
+    linear-gradient(90deg, #f6b40e, #ff6b6b, #f0abfc, #f6b40e) border-box;
+  background-size: 100% 100%, 300% 100%;
   padding: 20px;
+  animation: edge-run 5s linear infinite, edge-glow-warm 3.2s ease-in-out infinite;
+}
+@keyframes edge-glow-warm {
+  0%, 100% { box-shadow: 0 0 16px -6px rgba(246, 180, 14, .5); }
+  50%      { box-shadow: 0 0 32px -5px rgba(255, 107, 107, .8); }
 }
 .dev-card::before {
   content: ""; position: absolute; top: 0; left: 18px; width: 44px; height: 3px;
@@ -237,4 +286,10 @@ footer .small { font-size: .74rem; opacity: .7; margin-top: 6px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .blob, .folder, .pill, .eyebrow { animation: none; transition: none; }
+  .flash, .particles { display: none; }
+  .dev-card {
+    animation: none;
+    border-color: var(--line2);
+    background: linear-gradient(180deg, var(--card), rgba(13, 21, 38, .55));
+  }
 }
