@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ============================================================
+       BEFORE uploading: replace 0xgf-18 with your GitHub
+       username in the <loc> line below. Same replacement is done
+       in robots.txt and index.html.
+       ============================================================ -->
+  <url>
+    <loc>https://0xgf-18.github.io/preston-past-papers/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>
