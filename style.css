@@ -177,6 +177,48 @@ h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; }
 }
 .folder.is-empty:hover { border-color: var(--line); box-shadow: 0 14px 44px rgba(3, 8, 24, .5); }
 
+/* ---------- About the developer ---------- */
+.about-dev { padding: 28px 0 10px; }
+.dev-card {
+  position: relative;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  background: linear-gradient(180deg, var(--card), rgba(13, 21, 38, .55));
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 20px;
+}
+.dev-card::before {
+  content: ""; position: absolute; top: 0; left: 18px; width: 44px; height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.dev-avatar {
+  flex: none; width: 74px; height: 74px; border-radius: 20px;
+  border: 2px solid rgba(246, 180, 14, .55);
+  background: var(--panel);
+}
+.dev-body { flex: 1 1 340px; min-width: 0; }
+.dev-name { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.05rem; }
+.dev-handle { color: var(--mut2); font-size: .8rem; font-weight: 500; margin-left: 6px; }
+.dev-bio { margin: 8px 0 0; color: var(--txt); font-size: .9rem; opacity: .92; }
+.dev-note { margin: 8px 0 0; color: var(--mut); font-size: .84rem; }
+.dev-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.dev-btn {
+  flex: none; align-self: center;
+  color: #171000; font: 800 .82rem "Inter", sans-serif; text-decoration: none;
+  background: linear-gradient(120deg, var(--gold), #ffce54);
+  padding: 10px 16px; border-radius: 999px;
+  box-shadow: 0 2px 14px rgba(246, 180, 14, .35);
+  transition: transform .15s ease, box-shadow .15s ease;
+  white-space: nowrap;
+}
+.dev-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(246, 180, 14, .45); }
+
+@media (max-width: 640px) {
+  .about-dev { padding: 22px 0 6px; }
+  .dev-card { flex-direction: column; align-items: flex-start; }
+  .dev-avatar { width: 64px; height: 64px; }
+}
+
 /* ---------- Footer ---------- */
 footer { background: #05080f; border-top: 1px solid var(--line); padding: 34px 0 40px; font-size: .86rem; color: var(--mut); }
 footer strong { color: var(--txt); }
